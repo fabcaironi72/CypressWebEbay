@@ -12,10 +12,11 @@ context('eBay Test', () => {
         //   Hacemos click en la lupa
         cy.get('#gh-btn').click()
 
-        // Imprimimos en consola sólo el número de resultados encontrados
+        // Imprimimos en consola sólo el número de resultados encontrados (por eso el split)
         cy.get(".srp-controls__count-heading").invoke('text').then((text) => {
             var arrText = text.split(" ");
             cy.log('NÚMERO DE ITEMS DEVUELTO: '+arrText[0])
+            console.log('NÚMERO DE ITEMS DEVUELTO: '+arrText[0]);
         });
     })
 })
